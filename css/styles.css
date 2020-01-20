@@ -11,12 +11,12 @@ body {
   display: grid;
   grid-template-columns: repeat(18, 1fr);
   grid-template-rows: repeat(18, 1fr);
-  width: calc(100vh - 200px);
-  height: calc(100vh - 200px);
-  margin: 100px auto;
+  width: calc(100vw - 100px);
+  height: calc(100vw - 100px);
+  margin: 50px auto 0;
   background: #fff;
   box-shadow: 0 10px 30px #aaa;
-  border: 5px solid black;
+  border: 3px solid black;
 }
 
 div[class^="item"] {
@@ -198,7 +198,52 @@ div[class^="item"] {
   grid-row-end: 19;
 }
 
-@media (min-width: 100vh) {
+@media (max-width: 500px) {
+  .item-2 {
+    background: #000;
+  }
+  .item-5 {
+    background: #ff0;
+  }
+  .item-10 {
+    background: #09f;
+  }
+  .item-11 {
+    background: #000;
+  }
+  .item-18 {
+    background: #000;
+  }
+  .item-23 {
+    background: #000;
+  }
+  .item-22 {
+    background: #f00;
+  }
+  .item-29 {
+    background: #000;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 99.9vh), (max-height: 500px) {
+  .container {
+    width: calc(100vw - 200px);
+    height: calc(100vw - 200px);
+    margin: 100px auto 0;
+  }
+
+  .item-8 {
+    grid-row-end: 9;
+  }
+  .item-9 {
+    grid-row-start: 9;
+  }
+}
+
+@media (min-width: 501px) {
+  .container {
+    border: 3px solid black;  
+  }
   .item-1 {
     background: #000;
   }
@@ -223,4 +268,18 @@ div[class^="item"] {
   .item-24 {
     background: #000;
   }
+}
+
+@media (min-height: 501px) and (min-width: 100vh) {
+  .container {
+    transform: rotate(45deg);
+    width: calc(100vh - 300px);
+    height: calc(100vh - 300px);
+    margin: 150px auto 0;
+    border-width: 5px;
+  }
+
+  div[class^="item"] {
+    border-width: 5px;
+  }  
 }
